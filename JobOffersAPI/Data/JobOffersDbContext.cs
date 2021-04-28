@@ -11,7 +11,7 @@ namespace JobOffersAPI.Data
     {
         public JobOffersDbContext(DbContextOptions<JobOffersDbContext> options):base(options)
         {
-
+           
         }
         public DbSet<JobOffer> Offers { get; set; }
     }

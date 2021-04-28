@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace JobOffersAPI.Controllers
 {
-    [ApiController]
     [Route("api/joboffer")]
+    [ApiController]
     public class JobOfferController : ControllerBase
     {
         private readonly IJobOffersRepo _repo;
@@ -46,7 +46,7 @@ namespace JobOffersAPI.Controllers
             var offer = _repo.GetJobOfferById(id);
             if(offer==null)
             {
-                return NotFound();
+                return NotFound();  
             }
             _repo.DeleteJobOffer(offer);
             return NoContent();
