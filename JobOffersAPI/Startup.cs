@@ -32,6 +32,7 @@ namespace JobOffersAPI
             services.AddControllers();
             services.AddDbContext<JobOffersDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IJobOffersRepo,JobOffersRepo>();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JobOffersAPI", Version = "v1" });
